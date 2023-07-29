@@ -56,8 +56,8 @@
 			children = (
 				86D0C1EF2A75B0080041ED01 /* BB_QuotesApp.swift */,
 				86D0C1F12A75B0080041ED01 /* ContentView.swift */,
-				86D0C1FE2A75B1B70041ED01 /* samplecharacter.json */,
 				86D0C1F32A75B00A0041ED01 /* Assets.xcassets */,
+				86D0C1FE2A75B1B70041ED01 /* samplecharacter.json */,
 				86D0C1F52A75B00A0041ED01 /* BB_Quotes.entitlements */,
 				86D0C1F62A75B00A0041ED01 /* Preview Content */,
 			);
