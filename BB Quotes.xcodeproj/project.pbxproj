@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8610C4F62A76C7C8008400F8 /* FetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8610C4F52A76C7C8008400F8 /* FetchController.swift */; };
+		86B6B3812A7725E3008B836C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B6B3802A7725E3008B836C /* Constants.swift */; };
 		86D0C1F02A75B0080041ED01 /* BB_QuotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D0C1EF2A75B0080041ED01 /* BB_QuotesApp.swift */; };
 		86D0C1F22A75B0080041ED01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D0C1F12A75B0080041ED01 /* ContentView.swift */; };
 		86D0C1F42A75B00A0041ED01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86D0C1F32A75B00A0041ED01 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		8610C4F52A76C7C8008400F8 /* FetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchController.swift; sourceTree = "<group>"; };
+		86B6B3802A7725E3008B836C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		86D0C1EC2A75B0080041ED01 /* BB Quotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BB Quotes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D0C1EF2A75B0080041ED01 /* BB_QuotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BB_QuotesApp.swift; sourceTree = "<group>"; };
 		86D0C1F12A75B0080041ED01 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				8610C4F52A76C7C8008400F8 /* FetchController.swift */,
 				86D0C2022A75C0F20041ED01 /* Quote.swift */,
 				86D0C2042A75C14B0041ED01 /* Character.swift */,
+				86B6B3802A7725E3008B836C /* Constants.swift */,
 				86D0C1F32A75B00A0041ED01 /* Assets.xcassets */,
 				86D0C1FE2A75B1B70041ED01 /* samplecharacter.json */,
 				86D0C1F52A75B00A0041ED01 /* BB_Quotes.entitlements */,
@@ -157,6 +160,7 @@
 				86D0C1F02A75B0080041ED01 /* BB_QuotesApp.swift in Sources */,
 				8610C4F62A76C7C8008400F8 /* FetchController.swift in Sources */,
 				86D0C2052A75C14B0041ED01 /* Character.swift in Sources */,
+				86B6B3812A7725E3008B836C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
