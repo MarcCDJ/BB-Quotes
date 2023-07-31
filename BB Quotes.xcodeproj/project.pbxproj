@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8610C4F62A76C7C8008400F8 /* FetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8610C4F52A76C7C8008400F8 /* FetchController.swift */; };
+		8684894E2A7802DB004D3DAE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8684894D2A7802DB004D3DAE /* ViewModel.swift */; };
 		86B6B3812A7725E3008B836C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B6B3802A7725E3008B836C /* Constants.swift */; };
 		86D0C1F02A75B0080041ED01 /* BB_QuotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D0C1EF2A75B0080041ED01 /* BB_QuotesApp.swift */; };
 		86D0C1F22A75B0080041ED01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D0C1F12A75B0080041ED01 /* ContentView.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		8610C4F52A76C7C8008400F8 /* FetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchController.swift; sourceTree = "<group>"; };
+		8684894D2A7802DB004D3DAE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		86B6B3802A7725E3008B836C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		86D0C1EC2A75B0080041ED01 /* BB Quotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BB Quotes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D0C1EF2A75B0080041ED01 /* BB_QuotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BB_QuotesApp.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			children = (
 				86D0C1EF2A75B0080041ED01 /* BB_QuotesApp.swift */,
 				86D0C1F12A75B0080041ED01 /* ContentView.swift */,
+				8684894D2A7802DB004D3DAE /* ViewModel.swift */,
 				8610C4F52A76C7C8008400F8 /* FetchController.swift */,
 				86D0C2022A75C0F20041ED01 /* Quote.swift */,
 				86D0C2042A75C14B0041ED01 /* Character.swift */,
@@ -161,6 +164,7 @@
 				8610C4F62A76C7C8008400F8 /* FetchController.swift in Sources */,
 				86D0C2052A75C14B0041ED01 /* Character.swift in Sources */,
 				86B6B3812A7725E3008B836C /* Constants.swift in Sources */,
+				8684894E2A7802DB004D3DAE /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
