@@ -82,6 +82,9 @@ struct QuoteView: View {
                         .cornerRadius(7)
                         .shadow(color: Color("\(show.noSpaces)Shadow"), radius: 2)
                     }
+                    .task {
+                        await viewModel.getData(for: show)
+                    }
                     
                     Spacer(minLength: 180)
                 }
