@@ -14,7 +14,7 @@ struct FetchController {
     
     private let baseURL = URL(string: "https://breaking-bad-api-six.vercel.app/api")!
     
-    // https://breaking-base-api-six.vercel.app/api/quotes/random?production=Breaking+Bad
+    // https://breaking-bad-api-six.vercel.app/api/quotes/random?production=Breaking+Bad
     
     func fetchQuote(from show: String) async throws ->  Quote {
         let quoteURL = baseURL.appending(path: "quotes/random")

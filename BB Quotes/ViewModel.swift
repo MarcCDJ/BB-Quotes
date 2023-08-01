@@ -33,6 +33,7 @@ class ViewModel: ObservableObject {
             status = .success(data: (quote, character))
         } catch {
             status = .failed(error: error)
+            print("Error: \(error.localizedDescription)")
         }
     }
 }
