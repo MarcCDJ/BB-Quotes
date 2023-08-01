@@ -14,7 +14,7 @@ struct QuoteView: View {
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                Image(show.lowercased().filter { $0 != " " } )
+                Image(show.lowercased().filter { $0 != " " })
                     .resizable()
                     .frame(width: geo.size.width * 2.7, height: geo.size.height * 1.2)
                 

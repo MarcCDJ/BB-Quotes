@@ -53,7 +53,7 @@ struct FetchController {
         }
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        let characters = try JSONDecoder().decode([Character].self, from: data)
+        let characters = try decoder.decode([Character].self, from: data) // TODO: this is failing
         
         return characters[0]
     }
