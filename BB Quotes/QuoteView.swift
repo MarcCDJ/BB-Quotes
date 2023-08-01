@@ -9,6 +9,7 @@ import SwiftUI
 
 struct QuoteView: View {
     @StateObject private var viewModel = ViewModel(controller: FetchController())
+    @State private var showCharacterInfo = false
     let show: String
     
     var body: some View {
@@ -43,6 +44,12 @@ struct QuoteView: View {
                                 }
                                 .frame(width: geo.size.width / 1.1, height: geo.size.height / 1.8)
                                 .cornerRadius(80)
+                                .onTapGesture {
+                                    showCharacterInfo.toggle()
+                                }
+                                .sheet(isPresented: $showCharacterInfo) {
+                                    CharacterView(show: show, character: data.character)
+                                }
                                 
                                 Text(data.quote.character)
                                     .foregroundStyle(.white)
