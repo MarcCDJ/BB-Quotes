@@ -28,7 +28,7 @@ class ViewModel: ObservableObject {
         status = .fetching
         
         do {
-            let quote = try await controller.fetchQuote(from: "", author: character.name)
+            let quote = try await controller.fetchQuote(from: "", character: character.name)
             status = .success(data: (quote, character))
         } catch {
             status = .failed(error: error)
@@ -39,12 +39,10 @@ class ViewModel: ObservableObject {
         status = .fetching
         
         var searchShow = show
-        print("searchShow is \(searchShow)")
         if show.contains("Random") {
             let randomInt = Int.random(in: 0...1)
             searchShow = randomInt == 0 ? "Breaking Bad" : "Better Call Saul"
         }
-        print("searchShow is now \(searchShow)")
         
         do {
             let quote = try await controller.fetchQuote(from: searchShow)
