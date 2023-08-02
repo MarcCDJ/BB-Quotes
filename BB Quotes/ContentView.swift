@@ -19,6 +19,11 @@ struct ContentView: View {
                 .tabItem {
                     Label(Constants.bcsName, systemImage: "briefcase")
                 }
+            
+            QuoteView(show: Constants.randomName)
+                .tabItem {
+                    Label(Constants.randomName, systemImage: "person.fill.questionmark")
+                }
         }
         .onAppear {
             UITabBar.appearance().scrollEdgeAppearance = UITabBarAppearance()

@@ -10,14 +10,20 @@ import SwiftUI
 struct QuoteView: View {
     @StateObject private var viewModel = ViewModel(controller: FetchController())
     @State private var showCharacterInfo = false
-    let show: String
+    var show: String
     
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                Image(show.lowerNoSpaces)
-                    .resizable()
-                    .frame(width: geo.size.width * 2.7, height: geo.size.height * 1.2)
+                if show.contains("Random") {
+                    Image("tree")
+                        .resizable()
+                        .frame(width: geo.size.width * 2.7, height: geo.size.height * 1.2)
+                } else {
+                    Image(show.lowerNoSpaces)
+                        .resizable()
+                        .frame(width: geo.size.width * 2.7, height: geo.size.height * 1.2)
+                }
                 
                 VStack {
                     VStack {
@@ -98,7 +104,7 @@ struct QuoteView: View {
 
 struct QuoteView_Previews: PreviewProvider {
     static var previews: some View {
-        QuoteView(show: Constants.bcsName)
+        QuoteView(show: Constants.randomName)
             .preferredColorScheme(.dark)
     }
 }
