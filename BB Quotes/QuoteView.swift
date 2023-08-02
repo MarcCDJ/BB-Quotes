@@ -78,7 +78,6 @@ struct QuoteView: View {
 
                     Button {
                         Task {
-                            print("Getting data for show \(show)")
                             await viewModel.getData(for: show)
                         }
                     } label: {

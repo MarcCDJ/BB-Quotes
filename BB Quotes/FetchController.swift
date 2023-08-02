@@ -15,19 +15,18 @@ struct FetchController {
     private let baseURL = URL(string: "https://breaking-bad-api-six.vercel.app/api")!
     
     // https://breaking-bad-api-six.vercel.app/api/quotes/random?production=Breaking+Bad    // random quote by show
-    // https://breaking-bad-api-six.vercel.app/api/quotes/random?author=Skyler+White        // random quote by character
-    func fetchQuote(from show: String = "", author: String = "") async throws ->  Quote {
+    // https://breaking-bad-api-six.vercel.app/api/quotes/random?character=Skyler+White        // random quote by character
+    func fetchQuote(from show: String = "", character: String = "") async throws ->  Quote {
         let quoteURL = baseURL.appending(path: "quotes/random")
         var quoteComponents = URLComponents(url: quoteURL, resolvingAgainstBaseURL: true)
-        let quoteQueryItem = !author.isEmpty
-            ? URLQueryItem(name: "author", value: author)
+        let quoteQueryItem = !character.isEmpty
+            ? URLQueryItem(name: "character", value: character)
             : URLQueryItem(name: "production", value: show.replaceSpaceWithPlus)
         
         quoteComponents?.queryItems = [quoteQueryItem]
         guard let fetchURL = quoteComponents?.url else {
             throw NetworkError.badURL
         }
-        print("fetching quote: \(fetchURL)")
         let (data, response) = try await URLSession.shared.data(from: fetchURL)
         
         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
@@ -48,7 +47,6 @@ struct FetchController {
         guard let fetchURL = characterComponents?.url else {
             throw NetworkError.badURL
         }
-        print("fetching character: \(fetchURL)")
         let (data, response) = try await URLSession.shared.data(from: fetchURL)
         
         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {

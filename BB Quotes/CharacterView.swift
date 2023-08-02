@@ -13,7 +13,6 @@ struct CharacterView: View {
     let show: String
     let character: Character
     
-    
     var body: some View {
         return GeometryReader { geo in
             ZStack(alignment: .top) {
