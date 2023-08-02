@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8610C4F62A76C7C8008400F8 /* FetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8610C4F52A76C7C8008400F8 /* FetchController.swift */; };
+		864B785B2A7AA0EF001C6730 /* CharacterQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B785A2A7AA0EF001C6730 /* CharacterQuoteView.swift */; };
 		867B21E62A7960560066EE61 /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867B21E52A7960560066EE61 /* CharacterView.swift */; };
 		8684894E2A7802DB004D3DAE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8684894D2A7802DB004D3DAE /* ViewModel.swift */; };
 		868489502A780CE1004D3DAE /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8684894F2A780CE1004D3DAE /* QuoteView.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		8610C4F52A76C7C8008400F8 /* FetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchController.swift; sourceTree = "<group>"; };
+		864B785A2A7AA0EF001C6730 /* CharacterQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterQuoteView.swift; sourceTree = "<group>"; };
 		867B21E52A7960560066EE61 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 		8684894D2A7802DB004D3DAE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		8684894F2A780CE1004D3DAE /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				86D0C1F12A75B0080041ED01 /* ContentView.swift */,
 				8684894F2A780CE1004D3DAE /* QuoteView.swift */,
 				867B21E52A7960560066EE61 /* CharacterView.swift */,
+				864B785A2A7AA0EF001C6730 /* CharacterQuoteView.swift */,
 				8684894D2A7802DB004D3DAE /* ViewModel.swift */,
 				8610C4F52A76C7C8008400F8 /* FetchController.swift */,
 				86D0C2022A75C0F20041ED01 /* Quote.swift */,
@@ -173,6 +176,7 @@
 				867B21E62A7960560066EE61 /* CharacterView.swift in Sources */,
 				86B6B3812A7725E3008B836C /* Constants.swift in Sources */,
 				8684894E2A7802DB004D3DAE /* ViewModel.swift in Sources */,
+				864B785B2A7AA0EF001C6730 /* CharacterQuoteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

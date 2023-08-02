@@ -10,8 +10,9 @@ import SwiftUI
 struct QuoteView: View {
     @StateObject private var viewModel = ViewModel(controller: FetchController())
     @State private var showCharacterInfo = false
+
     var show: String
-    
+
     var body: some View {
         GeometryReader { geo in
             ZStack {
@@ -24,13 +25,13 @@ struct QuoteView: View {
                         .resizable()
                         .frame(width: geo.size.width * 2.7, height: geo.size.height * 1.2)
                 }
-                
+
                 VStack {
                     VStack {
                         Spacer(minLength: 140)
-                        
+
                         switch viewModel.status {
-                        case .success(let data):
+                        case let .success(data):
                             Text("\"\(data.quote.quote)\"")
                                 .minimumScaleFactor(0.5)
                                 .multilineTextAlignment(.center)
@@ -39,7 +40,7 @@ struct QuoteView: View {
                                 .background(.black.opacity(0.5))
                                 .cornerRadius(25)
                                 .padding(.horizontal)
-                            
+
                             ZStack(alignment: .bottom) {
                                 AsyncImage(url: data.character.images[0]) { image in
                                     image
@@ -56,7 +57,7 @@ struct QuoteView: View {
                                 .sheet(isPresented: $showCharacterInfo) {
                                     CharacterView(show: show, character: data.character)
                                 }
-                                
+
                                 Text(data.quote.character)
                                     .foregroundStyle(.white)
                                     .padding(10)
@@ -65,33 +66,34 @@ struct QuoteView: View {
                             }
                             .frame(width: geo.size.width / 1.1, height: geo.size.height / 1.8)
                             .cornerRadius(80)
-                            
+
                         case .fetching:
                             ProgressView()
                         default:
                             EmptyView()
                         }
-                        
+
                         Spacer()
                     }
-                    
-                    Button{
+
+                    Button {
                         Task {
+                            print("Getting data for show \(show)")
                             await viewModel.getData(for: show)
                         }
                     } label: {
-                        Text("Get Random Quote")
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color("\(show.noSpaces)Button"))
-                        .cornerRadius(7)
-                        .shadow(color: Color("\(show.noSpaces)Shadow"), radius: 2)
+                        Text(show.contains("Random") ? "Get Random Character" : "Get Random Quote")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color("\(show.noSpaces)Button"))
+                            .cornerRadius(7)
+                            .shadow(color: Color("\(show.noSpaces)Shadow"), radius: 2)
                     }
                     .task {
                         await viewModel.getData(for: show)
                     }
-                    
+
                     Spacer(minLength: 180)
                 }
                 .frame(width: geo.size.width)
@@ -99,6 +101,7 @@ struct QuoteView: View {
             .frame(width: geo.size.width, height: geo.size.height)
         }
         .ignoresSafeArea()
+        .preferredColorScheme(.dark)
     }
 }
 

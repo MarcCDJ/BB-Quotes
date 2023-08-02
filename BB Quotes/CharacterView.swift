@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct CharacterView: View {
+    @State var showQuotePopup = false
+    
     let show: String
     let character: Character
     
+    
     var body: some View {
-        GeometryReader { geo in
+        return GeometryReader { geo in
             ZStack(alignment: .top) {
                 // background image
+                let imageURL: URL = character.images.randomElement()!
                 Image(show.lowerNoSpaces)
                     .resizable()
                     .scaledToFit()
@@ -22,12 +26,18 @@ struct CharacterView: View {
                 ScrollView {
                     // character image
                     VStack {
-                        AsyncImage(url: character.images.randomElement()) { image in
+                        AsyncImage(url: imageURL) { image in
                             image
                                 .resizable()
                                 .scaledToFill()
                         } placeholder: {
                             ProgressView()
+                        }
+                        .onTapGesture {
+                            showQuotePopup.toggle()
+                        }
+                        .sheet(isPresented: $showQuotePopup) {
+                            CharacterQuoteView(imageURL: imageURL, character: character)
                         }
                     }
                     .frame(width: geo.size.width / 1.2, height: geo.size.height / 1.7)
@@ -35,7 +45,6 @@ struct CharacterView: View {
                     .padding(.top, 60)
                     
                     // character info
-                    
                     VStack(alignment: .leading) {
                         Group {
                             Text(character.name)
@@ -81,12 +90,13 @@ struct CharacterView: View {
             }
         }
         .ignoresSafeArea()
+        .preferredColorScheme(.dark)
     }
 }
 
 struct CharacterView_Previews: PreviewProvider {
     static var previews: some View {
         CharacterView(show: Constants.bbName, character: Constants.previewCharacter)
-//            .preferredColorScheme(.dark)
+            .preferredColorScheme(.dark)
     }
 }
