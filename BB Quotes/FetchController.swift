@@ -17,9 +17,15 @@ struct FetchController {
     // https://breaking-bad-api-six.vercel.app/api/quotes/random?production=Breaking+Bad
     
     func fetchQuote(from show: String) async throws ->  Quote {
+        var searchShow = show
+        if show.contains("Random") {
+            let randomInt = Int.random(in: 0...1)
+            searchShow = randomInt == 0 ? "Breaking Bad" : "Better Call Saul"
+        }
+        
         let quoteURL = baseURL.appending(path: "quotes/random")
         var quoteComponents = URLComponents(url: quoteURL, resolvingAgainstBaseURL: true)
-        let quoteQueryItem = URLQueryItem(name: "production", value: show.replaceSpaceWithPlus)
+        let quoteQueryItem = URLQueryItem(name: "production", value: searchShow.replaceSpaceWithPlus)
         quoteComponents?.queryItems = [quoteQueryItem]
         
         guard let fetchURL = quoteComponents?.url else {
